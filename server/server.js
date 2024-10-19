@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/test-connection', async (req, res) => {
     try {
         const result = await pool.query('SELECT NOW()');
-        res.status(200).json({ message: 'Conexão bem-sucedida', time: result.rows[0].now });
+        res.status(200).json({ message: 'Conexão bem-sucedida', new: Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' } )});
     } catch (error) {
         console.error('Erro ao conectar ao banco de dados:', error);
         res.status(500).json({ message: 'Erro ao conectar ao banco de dados' });

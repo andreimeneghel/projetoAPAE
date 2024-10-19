@@ -1,3 +1,5 @@
+
+
 function toggleForms() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
@@ -84,33 +86,34 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (event) {
             const cpfRegister = document.getElementById('cpf-register');
             const cpfLogin = document.getElementById('cpf-login');
-            if (cpfRegister && !validarCPF(cpfRegister.value)) {
-                event.preventDefault();
-                event.stopPropagation();
-                cpfRegister.setCustomValidity('CPF inválido');
-                cpfRegister.classList.add('is-invalid');
-            } else if (cpfLogin && !validarCPF(cpfLogin.value)) {
-                event.preventDefault();
-                event.stopPropagation();
-                cpfLogin.setCustomValidity('CPF inválido');
-                cpfLogin.classList.add('is-invalid');
-            } else {
-                if (cpfRegister) {
-                    cpfRegister.setCustomValidity('');
-                    cpfRegister.classList.remove('is-invalid');
-                }
-                if (cpfLogin) {
-                    cpfLogin.setCustomValidity('');
-                    cpfLogin.classList.remove('is-invalid');
-                }
-                if (!form.checkValidity()) {
+            console.log(cpfLogin)
+            console.log(validarCPF(cpfRegister.value))
+                if (cpfRegister && !validarCPF(cpfRegister.value)) {
                     event.preventDefault();
                     event.stopPropagation();
+                    cpfRegister.setCustomValidity('CPF inválido');
+                    cpfRegister.classList.add('is-invalid');
                 } else {
+                    if (cpfRegister) {
+                        console.log('c')
+                        cpfRegister.setCustomValidity('');
+                        cpfRegister.classList.remove('is-invalid');
+                    }
+                    if (cpfLogin) {
+                        console.log('d')
+                        cpfLogin.setCustomValidity('');
+                        cpfLogin.classList.remove('is-invalid');
+                    }
+                    if (!form.checkValidity()) {
+                        console.log('e')
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
                     event.preventDefault();
-                    // Enviar dados para o servidor
+                    console.log('oi3')
                     const formData = new FormData(form);
                     const jsonData = JSON.stringify(Object.fromEntries(formData));
+                    console.log(jsonData);
                     fetch('/register', {
                         method: 'POST',
                         body: jsonData,
