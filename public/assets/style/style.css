@@ -1,0 +1,12 @@
+body {
+    background-color: #231F20;
+}
+.login-container {
+    height: 100vh; 
+}
+.card {
+    background-color: #003E7F;
+}
+.hidden {
+    display: none;
+}

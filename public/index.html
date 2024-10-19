@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Login e Cadastro</title>
+    <style>
+        body {
+            background-color: #231F20;
+        }
+        .login-container {
+            height: 100vh; 
+        }
+        .card {
+            background-color: #003E7F;
+            border-radius: 15px;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-floating {
+            margin-bottom: 1rem;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+        .text-white {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container login-container d-flex justify-content-center align-items-center">
+        <div class="card p-4 text-center ps-5 pe-5">
+            <div id="login-form">
+                <img src="assets/img/apae-logo.png" class="img-fluid mb-3" style="max-width: 150px;" alt="Logo APAE">
+                <form class="needs-validation" novalidate>
+                    <div class="form-floating m-2">
+                        <input type="text" id="cpf-login" class="form-control" placeholder="CPF" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                        <label for="cpf-login" class="form-label">CPF</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira seu CPF.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                        <label for="senha" class="form-label">Senha</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira sua senha.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-50 mt-4">Entrar</button>
+                    <div class="mt-3">
+                        <a href="#" class="text-white" onclick="toggleForms()">Criar sua conta?</a>
+                    </div>
+                </form>
+            </div>
+            <div id="register-form" class="hidden">
+                <h2 class="card-title text-white">Cadastro</h2>
+                <form class="needs-validation" novalidate>
+                    <div class="form-floating m-2">
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome Completo" required>
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira seu nome completo.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="date" id="data-nascimento" name="dataNascimento" class="form-control" placeholder="Data de Nascimento" required>
+                        <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira sua data de nascimento.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="email" id="email-register" name="email" class="form-control" placeholder="Email" required>
+                        <label for="email-register" class="form-label">Email</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira um email válido.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="password" id="senha-register" name="senha" class="form-control" placeholder="Senha" required>
+                        <label for="senha-register" class="form-label">Senha</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira uma senha.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="text" id="cpf-register" name="cpf" class="form-control" placeholder="CPF" required>
+                        <label for="cpf-register" class="form-label">CPF</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira um CPF válido.
+                        </div>
+                    </div>
+                    <div class="form-floating m-2">
+                        <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone" required>
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <div class="invalid-feedback">
+                            Por favor, insira um telefone válido.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-50 mt-4">Cadastrar</button>
+                    <div class="mt-3">
+                        <a href="#" class="text-white" onclick="toggleForms()">Já tem uma conta? Entrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+</body>
+</html>
